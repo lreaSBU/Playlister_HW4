@@ -503,17 +503,20 @@ function GlobalStoreContextProvider(props) {
     store.redo = function () {
         tps.doTransaction();
     }
+    store.canEditBar = function(){
+        return store.currentModal === "NONE";
+    }
     store.canAddNewSong = function() {
-        return (store.currentList !== null);
+        return store.canEditBar() && (store.currentList !== null);
     }
     store.canUndo = function() {
-        return ((store.currentList !== null) && tps.hasTransactionToUndo());
+        return store.canEditBar() && ((store.currentList !== null) && tps.hasTransactionToUndo());
     }
     store.canRedo = function() {
-        return ((store.currentList !== null) && tps.hasTransactionToRedo());
+        return store.canEditBar() && ((store.currentList !== null) && tps.hasTransactionToRedo());
     }
     store.canClose = function() {
-        return (store.currentList !== null);
+        return store.canEditBar() && (store.currentList !== null);
     }
 
     // THIS FUNCTION ENABLES THE PROCESS OF EDITING A LIST NAME
