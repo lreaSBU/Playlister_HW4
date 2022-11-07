@@ -31,7 +31,6 @@ function WorkspaceScreen() {
     }
     return (
         <Box>
-        { modalJSX }
         <List 
             id="playlist-cards" 
             sx={{ width: '100%', bgcolor: 'background.paper' }}
@@ -46,7 +45,8 @@ function WorkspaceScreen() {
                     />
                 ))  
             }
-         </List>            
+         </List>      
+         { modalJSX }      
          </Box>
     )
 }

@@ -38,7 +38,7 @@ export default function MUIRemoveSongModal() {
 
     return (
         <Modal
-            open={store.listMarkedForDeletion !== null}
+            open={store.currentModal === "REMOVE_SONG"}
         >
             <Box sx={style}>
             <div
@@ -51,7 +51,7 @@ export default function MUIRemoveSongModal() {
             </div>
             <div className="modal-center">
                 <div className="modal-center-content">
-                    Are you sure you wish to permanently remove {songTitle} from the playlist?
+                    Are you sure you wish to remove {songTitle} from the playlist?
                 </div>
             </div>
             <div className="modal-south">
