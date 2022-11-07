@@ -87,6 +87,7 @@ function GlobalStoreContextProvider(props) {
             }
             // STOP EDITING THE CURRENT LIST
             case GlobalStoreActionType.CLOSE_CURRENT_LIST: {
+                console.log("CLOSING CURRENT LIST!!!");
                 return setStore({
                     currentModal : CurrentModal.NONE,
                     idNamePairs: store.idNamePairs,

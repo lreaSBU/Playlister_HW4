@@ -25,6 +25,7 @@ function EditToolbar() {
         store.redo();
     }
     function handleClose() {
+        console.log("starting to close!");
         store.closeCurrentList();
     }
     return (
